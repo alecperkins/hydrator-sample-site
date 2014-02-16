@@ -1,0 +1,1 @@
+Sample [Hydrator](https://github.com/alecperkins/hydrator) project.

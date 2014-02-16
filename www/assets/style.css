@@ -1,0 +1,103 @@
+/* Simple CSS file that gets returned as-is. */
+body {
+    font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 1rem;
+}
+h1 {
+    font-weight: 300;
+}
+h1 img {
+    float: left;
+    width: 36px;
+    padding-right: 4px;
+}
+section {
+    border-bottom: 3px dotted #eee;
+}
+h2 a {
+    float: right;
+}
+p {
+    line-height: 1.5;
+}
+pre {
+    border: 1px solid #eee;
+    background: #f8f8f8;
+    padding: 0.25em 0.5em;
+    overflow-x: scroll;
+}
+.Intro {
+    max-width: 655px;
+    margin: 0 auto;
+}
+.Instagram {
+    text-align: center;
+}
+.Instagram_Images {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 0;
+    border: 6px solid #eee;
+    background: #eee;
+}
+.Instagram_Image {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.Instagram_Image:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.Instagram_Image, .Instagram_Image * {
+    display: inline-block;
+    width: 100%;
+}
+@media screen and (min-width: 641px) {
+    .Instagram_Image {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 769px) {
+    .Instagram_Image {
+        width: 33.3333333%;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .Instagram_Image {
+        width: 25%;
+    }
+}
+.Instagram_Nav {
+    border: 6px solid #eee;
+    border-bottom: 0;
+    background: white;
+}
+.Instagram_NavItem {
+    padding: 0.5em 1em;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+@media screen and (min-width: 641px) {
+    .Instagram_Nav {
+        display: inline-block;
+    }
+    .Instagram_NavItem {
+        display: inline-block;
+    }
+}
+.Instagram_NavItem:hover {
+    background: #f8f8f8;
+}
+.Instagram_NavItem[data-active="true"] {
+    background: #eee;
+}
+.Byline {
+    margin-top: 1rem;
+    text-align: right;
+    font-size: 13px;
+}

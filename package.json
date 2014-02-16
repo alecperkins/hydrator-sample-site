@@ -1,0 +1,12 @@
+{
+  "name": "hydrator-sample-site",
+  "version": "0.0.1",
+  "description": "",
+  "engines": {
+    "node": "0.11.x",
+    "npm": "~1.3.0"
+  },
+  "dependencies": {
+    "hydrator": "0.1.0"
+  }
+}
