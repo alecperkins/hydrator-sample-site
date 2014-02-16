@@ -43,6 +43,10 @@ pre {
     border: 6px solid #eee;
     background: #eee;
 }
+[data-showing_tag="false"] .Instagram_Images {
+    display: none;
+}
+
 .Instagram_Image {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -72,8 +76,10 @@ pre {
 }
 .Instagram_Nav {
     border: 6px solid #eee;
-    border-bottom: 0;
     background: white;
+}
+[data-showing_tag="true"] .Instagram_Nav {
+    border-bottom: 0;
 }
 .Instagram_NavItem {
     padding: 0.5em 1em;
