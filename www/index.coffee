@@ -165,18 +165,29 @@ renderTemplate = (instagram_res) ->
     return m.join('')
 
 query_tag = request.query.tag
-if query_tag in ALLOWED_QUERIES
-    instagram_api_endpoint = "https://api.instagram.com/v1/tags/#{ query_tag }/media/recent"
+CACHE_KEY = "index-#{ query_tag }"
 
-    instaquery =
-        client_id: env.INSTAGRAM_CLIENT_ID
+cacheAndReturn = (content) ->
+    response.ok(content)
+    cache.set(CACHE_KEY, content, 3600)
 
-    instagram_request = restler.get(instagram_api_endpoint, query: instaquery)
 
-    instagram_request.on 'success', (res) ->
-        response.ok(renderTemplate(res))
+cache.get CACHE_KEY, (index_content) ->
+    if index_content
+        response.ok(index_content)
+    else
+        if query_tag in ALLOWED_QUERIES
+            instagram_api_endpoint = "https://api.instagram.com/v1/tags/#{ query_tag }/media/recent"
 
-    instagram_request.on 'error', ->
-        response.ok(renderTemplate())
-else
-    response.ok(renderTemplate())
+            instaquery =
+                client_id: env.INSTAGRAM_CLIENT_ID
+
+            instagram_request = restler.get(instagram_api_endpoint, query: instaquery)
+
+            instagram_request.on 'success', (res) ->
+                cacheAndReturn(renderTemplate(res))
+
+            instagram_request.on 'error', ->
+                cacheAndReturn(renderTemplate())
+        else
+            cacheAndReturn(renderTemplate())
