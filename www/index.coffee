@@ -67,7 +67,7 @@ renderTemplate = (instagram_res) ->
                         </p>
                         <p>
                             Dynamic content is as simple as:
-                            <pre><code>response.ok('&lt;h1&gt;Hello, world!&lt;/h2&gt;')</code></pre>
+                            <pre><code>response.ok('&lt;h1&gt;Hello, world!&lt;/h1&gt;')</code></pre>
                         </p>
                     </section>
                     <section>
